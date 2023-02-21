@@ -25,7 +25,8 @@ class Resume : AppCompatActivity() {
         continuar.setOnClickListener {
 
             val intento:Intent=Intent(this,CatalogActivity::class.java)
-
+            intento.putExtra("asiento",bundle?.getInt("asiento"))
+            intento.putExtra("pelicula",bundle?.getString("titulo"))
             this.startActivity(intento)
         }
 

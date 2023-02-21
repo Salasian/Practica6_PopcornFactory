@@ -18,8 +18,8 @@ class MovieDetail : AppCompatActivity() {
 
         var bundle= intent.extras
         var seatsLeft=0
-        var id= -1
         var title=""
+        var pos=0
 
         if(bundle!=null) {
 
@@ -33,8 +33,8 @@ class MovieDetail : AppCompatActivity() {
         detailImage.setImageResource(bundle.getInt("image"))
         detailTitle.text = title
         detailDescription.text = bundle.getString("sinopsis")
-        seats.text="$seatsLeft seats available";
-        id=bundle.getInt("pos")
+        seats.text="$seatsLeft seats available"
+        pos=bundle.getInt("pos")
         }
         var tickets = findViewById<Button>(R.id.buyTickets)
         if(seatsLeft==0){
@@ -43,8 +43,8 @@ class MovieDetail : AppCompatActivity() {
             tickets.isEnabled = true
             tickets.setOnClickListener {
                 val intento: Intent = Intent(this,SeatsSelection::class.java)
-                intento.putExtra("id",id)
                 intento.putExtra("name",title)
+                intento.putExtra("pos",pos)
                 this.startActivity(intento)
             }
         }

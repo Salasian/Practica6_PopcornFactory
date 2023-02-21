@@ -51,7 +51,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:button="@android:color/transparent"
-            android:background="@drawable/radio_selectable"
+            android:background="@drawable/radio_normal"
             android:textSize="@dimen/rbtext"
             android:textStyle="bold" />
 
